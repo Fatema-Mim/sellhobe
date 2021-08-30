@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="style.css">
+
+        <title>SELLhobe</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <img id="featured" src="../image/pexels-kaique-rocha-243757.jpg" alt="">
+                    <div id="slide-wrapper">
+                        <img id="slideLeft" class="arrow" src="../image/ChevronLeft-512-removebg-preview.png" alt="Left Arrow">
+                        <div id="slider">
+                            <img class="thumbnail active" src="../image/pexels-kaique-rocha-243757.jpg" alt="">
+                            <img class="thumbnail" src="../image/pexels-kaique-rocha-243757.jpg" alt="">
+                            <img class="thumbnail"  src="../image/pexels-atc-comm-photo-3736855.jpg" alt="">
+                            <img class="thumbnail" src="../image/pexels-alexandro-david-3082256.jpg" alt="">
+                            <img class="thumbnail"  src="../image/pexels-atc-comm-photo-3736855.jpg" alt="">
+                            <img class="thumbnail" src="../image/pexels-musa-ortaç-3292366.jpg" alt="">
+                            <img class="thumbnail" src="../image/pexels-alexandro-david-3082256.jpg" alt="">
+                            <img class="thumbnail" src="../image/pexels-musa-ortaç-3292366.jpg" alt="">
+                        </div>
+                        <img id="slideRight" class="arrow" src="../image/arrow_right_icon-removebg-preview.png" alt="Right Arrow">
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="my_container">
+                        <h2>Hello Guys</h2>
+                        <hr>
+                        <h3><b>Price : </b> $65.54</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit quidem culpa, vitae autem voluptate molestias et sint perspiciatis ad ducimus.</p>
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+
+        <!-- Optional JavaScript; choose one of the two! -->
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+    
+        <script type="text/javascript">
+            let thumbnails = document.getElementsByClassName('thumbnail')
+
+            let activeImages = document.getElementsByClassName('active')
+            for(var i = 0; i < thumbnails.length; i++){
+                thumbnails[i].addEventListener('click', function(){
+                    console.log(activeImages)
+            
+                    if(activeImages.length > 0){
+                        activeImages[0].classList.remove('active')
+                    }
+                    
+
+                    this.classList.add('active')
+                    document.getElementById('featured').src = this.src
+                })
+            }
+
+            let buttonRight = document.getElementById('slideRight');
+            let buttonLeft = document.getElementById('slideLeft');
+
+            buttonLeft.addEventListener('click', function(){
+                document.getElementById('slider').scrollLeft -= 180
+            })
+
+            buttonRight.addEventListener('click', function(){
+                document.getElementById('slider').scrollLeft += 180
+            })
+        </script>
+    </body>
+</html>
